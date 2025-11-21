@@ -1,3 +1,4 @@
 flask
+flask-cors
 gunicorn
 git+https://github.com/anishomsy/apkpure.git@main
