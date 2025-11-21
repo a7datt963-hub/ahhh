@@ -1,7 +1,10 @@
 from flask import Flask, jsonify
+from flask_cors import CORS
 from apkpure.apkpure import ApkPure
 
 app = Flask(__name__)
+CORS(app)  # ✅ هذا يسمح بالوصول من أي دومين (المتصفح يقدر يجلب البيانات)
+
 api = ApkPure()
 
 # قائمة التطبيقات التي تريد عرضها
@@ -34,4 +37,4 @@ def get_apps():
     return jsonify(apps_data)
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=5000)
+    app.run(host="0.0.0.0", port=5000)    app.run(host="0.0.0.0", port=5000)
